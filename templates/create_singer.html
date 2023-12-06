@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{#            Sign-up instructions#}
+                <section class="flex flex-col text-white">
+                    <h2 class="text-g1">HOW TO SIGN-UP</h2>
+                    <span> 1. FIND your song choice on <a class="text-o1" href="https://www.youtube.com/">YouTube</a>.</span>
+                    <span> 2. COPY the link from Youtube.</span>
+                    <span> 3. Enter your name, paste the youtube link for your song and click "Add me to the list!".</span>
+                </section>
+
+<form method="POST" class="m-auto">
+    {% csrf_token %}
+    {{ form.as_p }}
+{#    <div class="grid gap-4 mb-4 grid-cols-2">#}
+{#        <div class="col-span-2">#}
+{#            <label for="name" class="block mb-2 text-sm font-medium text-o1 dark:text-white">Name</label>#}
+{#            {{ form.name.errors }}#}
+{#            <input type="text" name="{{ 'form.name' }}" id="name"#}
+{#                   class="bg-p1 placeholder-o1 border border-gray-300 text-o1 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"#}
+{#                   placeholder="Your name" required="">#}
+{#        </div>#}
+{#        <div class="col-span-2 sm:col-span-1">#}
+{#            <label for="song_name"#}
+{#                   class="block mb-2 text-sm font-medium text-o1 dark:text-white">Song#}
+{#                Name</label>#}
+{#            {{ form.song_name.errors }}#}
+{#            <input type="text" name="{{ 'song_name' }}" id="song_name"#}
+{#                   class="bg-p1 placeholder-o1 border border-gray-300 text-o1 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"#}
+{#                   placeholder="Youtube link" required="">#}
+{#        </div>#}
+{#    </div>#}
+    <button type="submit"
+            class="ml-20 text-g1 border-2 border-g1 bg-p1 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        Add me to the list!
+    </button>
+</form>
+{% endblock %}
