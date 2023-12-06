@@ -12,6 +12,7 @@
 
 {#    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" >#}
 
+    <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
 
     {% compress css %}
         <link rel="stylesheet" href="{% static 'src/output.css' %}">
@@ -27,7 +28,7 @@
 {#    <div class="absolute inset-0 bg-black opacity-50"></div>#}
 
 
-    <main class="flex-grow text-white">
+    <main class="flex-grow text-o1">
         {% block content %}
 
         {% endblock content %}
