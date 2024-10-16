@@ -2,14 +2,6 @@
 
 {% block content %}
 
-{#            Sign-up instructions#}
-                <section class="flex flex-col text-white">
-                    <h2 class="text-g1">HOW TO SIGN-UP</h2>
-                    <span> 1. FIND your song choice on <a class="text-o1" href="https://www.youtube.com/">YouTube</a>.</span>
-                    <span> 2. COPY the link from Youtube.</span>
-                    <span> 3. Enter your name, paste the youtube link for your song and click "Add me to the list!".</span>
-                </section>
-
 <form method="POST" class="m-auto">
     {% csrf_token %}
     {{ form.as_p }}
