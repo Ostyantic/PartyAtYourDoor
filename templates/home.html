@@ -124,14 +124,15 @@
                         </div>
                         <!-- Modal body -->
                         <div class="p-4 md:p-5">
-                            <form class="space-y-4" action="#">
+                            <form method="post" class="space-y-4" action="#">
+                                {% csrf_token %}
                                 <div>
-                                    <label for="name" class="dokdo-regular block text-xl mb-2 font-medium text-g1 dark:text-white">Name: <span class="dekko-regular text-o1 text-sm opacity-50">Get creative & pick your stage name</span></label>
-                                    <input type="text" name="name" id="name" placeholder="_________________________________________________________________" class="text-white placeholder-white placeholder:text-center placeholder:-translate-y-1 bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5" required />
+                                    <label for="id_name" class="dokdo-regular block text-xl mb-2 font-medium text-g1 dark:text-white">Name: <span class="dekko-regular text-o1 text-sm opacity-50">Get creative & pick your stage name</span></label>
+                                    <input type="text" name="name" id="id_name" placeholder="_________________________________________________________________" class="text-white placeholder-white placeholder:text-center placeholder:-translate-y-1 bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5" required />
                                 </div>
                                 <div>
-                                    <label for="song" class="dokdo-regular block text-xl mb-2 font-medium text-g1 dark:text-white">Song Link: <span class="dekko-regular text-o1 text-sm opacity-50">Paste the song's link below</span></label>
-                                    <input type="url" name="song" id="song" placeholder="_________________________________________________________________" class="text-white placeholder-white placeholder:text-center placeholder:-translate-y-1 bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5" required />
+                                    <label for="id_song_name" class="dokdo-regular block text-xl mb-2 font-medium text-g1 dark:text-white">Song Link: <span class="dekko-regular text-o1 text-sm opacity-50">Paste the song's link below</span></label>
+                                    <input type="url" name="song_name" id="id_song_name" placeholder="_________________________________________________________________" class="text-white placeholder-white placeholder:text-center placeholder:-translate-y-1 bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5" required />
                                 </div>
 {#                                <div class="flex justify-between">#}
 {#                                    <div class="flex justify-center">#}
