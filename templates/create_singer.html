@@ -37,16 +37,16 @@
 
 {% block content %}
 
-    <div class="flex justify-center items-center w-full p-4">
+    <div class="">
       <!-- Top image -->
-      <img class="w-1/2 h-auto p-4" src="{% static 'images/partyatyourdoorimage.png' %}" alt="Party At Your Door">
+      <img class="w-8/12 h-auto mx-20 mt-4" src="{% static 'images/partyatyourdoorimage.png' %}" alt="Party At Your Door">
     </div>
 
-    <div class="">
+    <div class="px-10 pb-10">
 
         <div class="">
             <label for="id_name" class="dokdo-regular block text-3xl mb-2 font-medium text-g1 dark:text-white">Room ID:<span class="dekko-regular text-o1 text-sm opacity-50"> Ask the host.</span></label>
-            <input type="text" name="name" id="id_name" placeholder="------" class="text-white placeholder-white placeholder:text-center bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5" maxlength="6" required />
+            <input type="text" name="name" id="id_name" placeholder="------" class="text-white text-center text-xl placeholder-white placeholder:text-center bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5" maxlength="6" required />
         </div>
 
         <h3 class="dokdo-regular text-3xl font-semibold text-g1">
@@ -54,22 +54,28 @@
         </h3>
 
         {#first last name div#}
-        <div>
+        <div class="flex justify-between">
             <div class="">
                 <label for="id_name" class="dokdo-regular block text-xl mb-2 font-medium text-g1 dark:text-white"></label>
-                <input type="text" name="name" id="id_name" placeholder="First name:" class="text-white placeholder-white placeholder:text-center placeholder:-translate-y-1 bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5" required />
+                <input type="text" name="name" id="id_name" placeholder="First Name:" class="text-white placeholder-white placeholder:text-center placeholder:-translate-y-1 bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5" required />
             </div>
 
             <div class="">
                 <label for="id_name" class="dokdo-regular block text-xl mb-2 font-medium text-g1 dark:text-white"></label>
-                <input type="text" name="name" id="id_name" placeholder="Last name:" class="text-white placeholder-white placeholder:text-center placeholder:-translate-y-1 bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5" required />
+                <input type="text" name="name" id="id_name" placeholder="Last Name:" class="text-white placeholder-white placeholder:text-center placeholder:-translate-y-1 bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5" required />
             </div>
         </div>
 
         {#point of contact#}
         <div class="">
-            <label for="id_name" class="dokdo-regular block text-xl mb-2 font-medium text-g1 dark:text-white"></label>
-            <select class="text-white placeholder-white placeholder:text-center placeholder:-translate-y-1 bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5"/>
+            <label for="social_type" class="dokdo-regular block text-xl mb-2 font-medium text-g1 dark:text-white"></label>
+            <select name="social_types" id="social_type" class="text-white text-center bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5">
+                <option value="" disabled selected>--Choose a social contact option--</option>
+                <option value="tiktok">TikTok</option>
+                <option value="instagram">Instagram</option>
+                <option value="phone_number">Phone #</option>
+                <option value="email">Email</option>
+            </select>
         </div>
 
         {#contact username#}
@@ -78,10 +84,13 @@
             <input type="text" name="name" id="id_name" placeholder="--Type here" class="text-white placeholder-white placeholder:text-center placeholder:-translate-y-1 bg-p4 border-2 border-black focus:border-black focus:ring-black text-sm block w-full p-2.5" required />
         </div>
 
-        <div class="flex justify-center mt-4">
-            <button type="submit" class="text-g1 m-auto bg-p4 border-2 border-g1 hover:bg-p3 focus:ring-2 focus:outline-none focus:ring-g1 font-medium text-sm px-5 py-2.5 text-center">Let's Party</button>
+        <div class="dokdo-regular flex justify-center my-4">
+            <button type="submit" class="text-g1 m-auto bg-p4 border-2 border-g1 hover:bg-p3 focus:ring-2 focus:outline-none focus:ring-g1 font-light text-3xl p-5 text-center">Let's Party</button>
         </div>
 
+        <p class="text-xs text-gray-500">
+            Disclaimer : All information collected will solely be used for Party At Your Door and will not be shared with third party vendors.
+        </p>
     </div>
 
 {% endblock %}
