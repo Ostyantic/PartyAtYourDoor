@@ -23,13 +23,12 @@ class ContactInfo(models.Model):
         ('instagram', 'Instagram'),
         ('phone_number', 'Phone Number'),
         ('email', 'Email'),
-        ('n/a', 'N/A')
 
 
     ]
 
     first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=20, blank=True)
     social_types = models.CharField(max_length=12, choices=social_type_choices, default='')
     social_contact = models.CharField(max_length=100, blank=True)
 
