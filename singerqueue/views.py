@@ -6,6 +6,7 @@ from .forms import SingerForm
 
 
 class HomePageView(CreateView, ListView):
+    guest_id = ''
     template_name = 'home.html'
     model = Singer
     form_class = SingerForm
@@ -13,8 +14,9 @@ class HomePageView(CreateView, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['guest_id'] = self.guest_id
         context['singers'] = Singer.objects.all()
-        context['custom_user'] = CustomUser.objects.all()
+        context['admin'] = CustomUser.objects.get(id=1)
         return context
 
 
