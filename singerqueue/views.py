@@ -43,7 +43,7 @@ class SingerQueueView(CreateView, ListView):
     model = Singer
     form_class = SingerForm
     context_object_name = 'singers'
-    success_url = reverse_lazy("home")
+    success_url = reverse_lazy("queue")
 
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
