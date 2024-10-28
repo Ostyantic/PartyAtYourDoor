@@ -9,7 +9,7 @@ User = get_user_model()
 def validate_room_id(value):
     try:
         superuser = User.objects.get(is_superuser=True)
-        if value != superuser.room_id:
+        if value.lower() != superuser.room_id.lower():
             raise ValidationError("Incorrect Room ID. Please try again.")
     except User.DoesNotExist:
         raise ValidationError("Room does not exist.")
