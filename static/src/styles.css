@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Dekko&family=Dokdo&display=swap');
+
+.dekko-regular {
+  font-family: "Dekko", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dokdo-regular {
+  font-family: "Dokdo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
