@@ -6,6 +6,7 @@ from django.contrib.auth import get_user_model
 class Singer(models.Model):
     name = models.CharField(max_length=256)
     song_name = models.CharField(max_length=256)
+    song_link = models.URLField(max_length=200, blank=True)
 
     def __str__(self):
         return self.name
