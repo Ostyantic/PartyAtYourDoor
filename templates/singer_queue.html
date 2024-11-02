@@ -1,46 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{# HEADER #}
-{% block header %}
-
-
-
-    <nav class="text-center text-g1">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-around mx-auto p-4">
-            <a href="{% url 'home' %}" class="flex items-center rtl:space-x-reverse">
-                <span class="dokdo-regular m-auto self-center text-3xl font-semibold whitespace-nowrap dark:text-white">WELCOME TO THE PARTY</span>
-            </a>
-
-
-{#            <p>{{ admin.room_id }}</p>#}
-{#            {% for user in custom_user %}#}
-{#                <p>{{ user.room_id }}</p>#}
-{#            {% endfor %}#}
-
-
-{#            <button data-collapse-toggle="navbar-default" type="button"#}
-{#                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden"#}
-{#                    aria-controls="navbar-default" aria-expanded="false">#}
-{#                <span class="sr-only">Open main menu</span>#}
-{#                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"#}
-{#                     viewBox="0 0 17 14">#}
-{#                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"#}
-{#                          d="M1 1h15M1 7h15M1 13h15"></path>#}
-{#                </svg>#}
-{#            </button>#}
-{#            <div class="hidden w-full" id="navbar-default">#}
-{#                <ul class="font-medium flex flex-col md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">#}
-{#                    <li>#}
-{#                        <a href="{% url 'home' %}">Book Me</a>#}
-{#                    </li>#}
-{#                </ul>#}
-{#            </div>#}
-        </div>
-    </nav>
-
-
-{% endblock header %}
 
 {% block enterid %}
 
@@ -50,7 +10,7 @@
 {% block content %}
 
     <div class="mt-8 flex flex-col items-center">
-        <section class="w-11/12 flex flex-col border-2 border-p4">
+        <section class="w-11/12 flex flex-col border-2 border-p4 gradient_1">
             <h2 class="dokdo-regular text-g1 text-3xl text-center mt-2">How to sign-up</h2>
             <ol type="1" class="text-white text-center text-sm m-2">
                 <li>1. <span class="text-g1">Find your song</span> choice on <a href="https://www.youtube.com/" class="text-o1 underline">YouTube.</a></li>
@@ -61,54 +21,55 @@
 
         <div class="flex justify-center items-center w-full p-4">
           <!-- Image -->
-          <img class="w-1/2 h-auto p-4" src="{% static 'images/partyatyourdoorimage.png' %}" alt="Party At Your Door">
+          <img class="w-1/2 h-auto" src="{% static 'images/partyatyourdoorimage_new.png' %}" alt="Party At Your Door">
 
           <!-- Sign-up Button -->
           <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-                  class="dokdo-regular h-auto w-auto border-2 border-g1 bg-p1 text-g1 p-4 mx-4" type="button">
-            Sign Me Up!
+                  class="dokdo-regular h-auto w-auto border-2 border-g1 bg-p1 text-2xl text-g1 p-4 mx-4 whitespace-nowrap" type="button">
+              ADD NAME
           </button>
+
         </div>
 
         <div class="w-full flex flex-col items-center space-y-5">
 
 
             {#    Song Queue    #}
-            <section
-                    class="w-11/12 flex flex-col items-center justify-around border-2 border-green-400 bg-gradient-to-b from-p1 to-p2">
+            <section class="w-11/12 flex flex-col items-center justify-around border-2 border-green-400 bg-gradient-to-b from-p1 to-p2 drop-shadow-lg">
 
-                <p class="dokdo-regular text-center p-4 text-2xl text-g1">SONG QUEUE</p>
-                <div class="w-full flex flex-col bg-black mx-24 p-2 space-y-2">
-                    <div class="flex justify-between text-o1 bg-black border-2 border-g1">
-                        <span class="dokdo-regular basis-1/12">#</span>
-                        <span class="dokdo-regular basis-1/3">Name</span>
-                        <span class="dokdo-regular basis-1/2">Song Name</span>
-                    </div>
+                <p class="dokdo-regular text-center text-4xl text-g1">SONG QUEUE</p>
+                <div class="w-full flex flex-col bg-gradient-to-b from-p1 to-p2 mx-24 px-5 pb-5 space-y-2">
 
                     {# queue of users place, name, song #}
-                    <div class="h-32 overflow-y-auto flex flex-col space-y-2">
-                        {% for singer in singers %}
-                            {% if forloop.counter == 1 %}
-                                <div class="flex justify-between bg-g1 text-p1">
-                                    <div class="w-full flex justify-between">
-                                        <span class="dokdo-regular basis-1/12">{{ forloop.counter }}</span>
-                                        <p class="basis-1/3">{{ singer.name }}</p>
-                                        <span class="basis-1/2 truncate">{{ singer.song_name }}</span>
-                                    </div>
-                                    {#                                    <button>EDIT</button>#}
-                                </div>
-                            {% else %}
-                                <div class="flex justify-between bg-p1 text-o1">
-                                    <div class="w-full flex justify-between">
-                                        <span class="dokdo-regular basis-1/12">{{ forloop.counter }}</span>
-                                        <p class="basis-1/3">{{ singer.name }}</p>
-                                        <span class="basis-1/2">{{ singer.song_name }}</span>
-                                    </div>
-                                    {#                                    <button>EDIT</button>#}
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                    <div class="bg-black border-2 border-g1 p-3 rounded">
+                        <div class="flex justify-between text-o1 bg-black">
+                            <span class="dokdo-regular basis-1/12">#</span>
+                            <span class="dokdo-regular basis-1/3">Stage Name</span>
+                            <span class="dokdo-regular basis-1/2">Song Name</span>
+                        </div>
+                            <div class="h-32 overflow-y-auto flex flex-col space-y-2">
+                                {% for singer in singers %}
+                                    {% if forloop.counter == 1 %}
+                                        <div class="flex justify-between bg-g1 text-p1">
+                                            <div class="w-full flex justify-between">
+                                                <span class="dokdo-regular basis-1/12">{{ forloop.counter }}</span>
+                                                <p class="basis-1/3">{{ singer.name }}</p>
+                                                <span class="basis-1/2 truncate">{{ singer.song_name }}</span>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="flex justify-between bg-p1 text-o1">
+                                            <div class="w-full flex justify-between">
+                                                <span class="dokdo-regular basis-1/12">{{ forloop.counter }}</span>
+                                                <p class="basis-1/3">{{ singer.name }}</p>
+                                                <span class="basis-1/2">{{ singer.song_name }}</span>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
                     </div>
+
                 </div>
 
             </section>
